@@ -1,0 +1,61 @@
+# For detailed configuration reference documentation, visit:
+# https://supabase.com/docs/guides/local-development/cli/config
+project_id = "enclave-social-api"
+
+[api]
+enabled = true
+port = 54321
+schemas = ["public", "graphql_public"]
+extra_search_path = ["public", "extensions"]
+max_rows = 1000
+
+[db]
+port = 54322
+shadow_port = 55433
+major_version = 17
+
+[functions.exchange-account-token]
+enabled = true
+verify_jwt = false
+entrypoint = "./functions/exchange-account-token/index.ts"
+
+[functions.livekit-token]
+enabled = true
+verify_jwt = true
+entrypoint = "./functions/livekit-token/index.ts"
+
+[functions.send-message-notification]
+enabled = true
+verify_jwt = false
+entrypoint = "./functions/send-message-notification/index.ts"
+
+[functions.delete-account-cleanup]
+enabled = true
+verify_jwt = false
+entrypoint = "./functions/delete-account-cleanup/index.ts"
+
+[functions.create-platform-checkout]
+enabled = true
+verify_jwt = true
+entrypoint = "./functions/create-platform-checkout/index.ts"
+
+[functions.stripe-webhook]
+enabled = true
+verify_jwt = false
+entrypoint = "./functions/stripe-webhook/index.ts"
+
+[functions.create-connect-onboarding]
+enabled = true
+verify_jwt = true
+entrypoint = "./functions/create-connect-onboarding/index.ts"
+
+[functions.process-creator-payout]
+enabled = true
+verify_jwt = true
+entrypoint = "./functions/process-creator-payout/index.ts"
+
+[functions.create-payment-intent]
+enabled = true
+verify_jwt = true
+import_map = "./functions/create-payment-intent/deno.json"
+entrypoint = "./functions/create-payment-intent/index.ts"

@@ -1,0 +1,8 @@
+{
+  "imports": {
+    "@noble/hashes/sha3": "npm:@noble/hashes@1.8.0/sha3",
+    "@noble/post-quantum/ml-dsa.js": "npm:@noble/post-quantum@0.6.1/ml-dsa.js",
+    "@noble/post-quantum/utils.js": "npm:@noble/post-quantum@0.6.1/utils.js",
+    "@enclave/verify-sdk/": "./_shared/verify-sdk/"
+  }
+}
