@@ -10,7 +10,7 @@ Dispatches Expo push notifications when new messages are inserted.
 
 ## Required secrets
 
-- `MESSAGE_NOTIFICATION_WEBHOOK_SECRET` (must match the trigger header secret)
+- `MESSAGE_NOTIFICATION_WEBHOOK_SECRET` (must match `internal_job_secrets.message_notification`)
 - `SUPABASE_URL`
 - `SUPABASE_SERVICE_ROLE_KEY`
 
@@ -19,4 +19,4 @@ Dispatches Expo push notifications when new messages are inserted.
 - Keep this endpoint private to trigger callers only.
 - If rotating the webhook secret, update both:
   - edge function secret `MESSAGE_NOTIFICATION_WEBHOOK_SECRET`
-  - trigger definition header in migrations / database.
+  - database row `internal_job_secrets` where `job_key = 'message_notification'`
